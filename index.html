@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Barbería MR - Reservas</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen">
+
+  <div class="barber-pole-border w-full fixed top-0 left-0 z-50"></div>
+
+  <!-- NAVBAR SIN LOGO CENTRAL -->
+  <header class="fixed top-1 left-0 w-full z-40 bg-[#021414]/95 backdrop-blur-md border-b border-[#d4af37]/30">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+      
+      <!-- Logo a la izquierda con imagen redonda -->
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full border border-[#d4af37] p-0.5 overflow-hidden bg-[#042020] shadow-md shadow-[#d4af37]/20 flex-shrink-0">
+          <img src="logo.jpg" alt="Logo Barbería MR" class="w-full h-full object-cover object-center" onerror="this.src='https://via.placeholder.com/80/042020/d4af37?text=MR'">
+        </div>
+        <div class="flex flex-col leading-none">
+          <span class="font-vintage text-base font-black text-gold-metallic tracking-wider">BARBERÍA MR</span>
+          <span class="text-[9px] uppercase tracking-widest text-[#99b8b8]">Tradición & Corte</span>
+        </div>
+      </a>
+
+      <!-- Menú central visible en PC / Tablet -->
+      <nav class="hidden md:flex items-center gap-8 text-xs uppercase tracking-widest font-semibold text-zinc-300">
+        <a href="#servicios" class="hover:text-[#d4af37] transition">Servicios</a>
+        <a href="#contacto" class="hover:text-[#d4af37] transition">Contacto</a>
+      </nav>
+
+      <!-- Botón Reservar + Menú Hamburguesa para celulares -->
+      <div class="flex items-center gap-3">
+        <a href="#reservas" class="btn-gold-action px-4 py-2 rounded-lg text-xs font-bold tracking-wider uppercase flex items-center gap-1.5 shadow-md">
+          <span>Reservar</span>
+          <i class="fa-solid fa-arrow-right text-[10px]"></i>
+        </a>
+        <button id="btnMenuMobile" class="md:hidden text-zinc-300 hover:text-[#d4af37] text-lg p-1">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menú desplegable sólo en celulares -->
+    <div id="menuMobile" class="hidden md:hidden bg-[#031d1d] border-b border-[#d4af37]/30 px-6 py-4 space-y-3 text-xs uppercase tracking-wider text-center">
+      <a href="#servicios" class="block text-zinc-300 hover:text-[#d4af37]">Servicios</a>
+      <a href="#contacto" class="block text-zinc-300 hover:text-[#d4af37]">Contacto</a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative min-h-[75vh] flex items-center justify-center pt-24 pb-12 px-5 text-center overflow-hidden border-b border-[#d4af37]/20">
+    
+    <!-- Imagen de fondo oscura con opacidad -->
+    <div class="absolute inset-0 bg-cover bg-center opacity-30 filter grayscale" style="background-image: url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1400&auto=format&fit=crop');"></div>
+    <!-- Gradiente para fundir la foto con el verde oscuro -->
+    <div class="absolute inset-0 bg-gradient-to-t from-[#020b0b] via-[#020b0b]/60 to-[#020b0b]/90"></div>
+
+    <div class="relative z-10 max-w-xl mx-auto flex flex-col items-center">
+      <h1 class="font-gotica text-5xl md:text-6xl text-zinc-100 leading-none mb-3 drop-shadow-md">
+        Cortes con <br><span class="text-gold-metallic">carácter</span>
+      </h1>
+      <p class="text-xs md:text-sm text-zinc-300 max-w-xs md:max-w-md mx-auto mb-6 leading-relaxed">
+        Elegí tu horario disponible y asegurá tu lugar abonando la seña online.
+      </p>
+      <a href="#reservas" class="btn-gold-action font-vintage font-bold px-7 py-3 rounded-xl text-xs uppercase tracking-widest shadow-xl inline-block">
+        Ver Horarios Disponibles
+      </a>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <!-- SECCIÓN SERVICIOS SIN PRECIOS (Diseño rectangular ornamental) -->
+  <section id="servicios" class="max-w-md mx-auto px-5 py-6">
+    <div class="text-center mb-5">
+      <span class="text-[#d4af37] text-[10px] font-semibold tracking-widest uppercase">✦ TRADICIÓN & ESTILO ✦</span>
+      <h2 class="font-vintage text-xl font-bold text-gold-metallic mt-0.5">Nuestros Servicios</h2>
+    </div>
+
+    <div class="space-y-3">
+      <!-- Tarjeta Servicio 1 -->
+      <div class="card-vintage rounded-2xl p-4 border border-[#d4af37]/40 flex items-center gap-4 hover:border-[#d4af37] transition shadow-lg">
+        <div class="w-12 h-12 rounded-xl bg-[#031d1d] border border-[#d4af37]/40 flex items-center justify-center text-xl text-[#fef08a] shadow-inner flex-shrink-0">
+          ✂️
+        </div>
+        <div class="flex-1">
+          <h3 class="font-vintage text-sm font-bold text-white tracking-wide">Corte Tradicional</h3>
+          <p class="text-[11px] text-[#99b8b8] mt-0.5 leading-snug">Asesoramiento de imagen, lavado, degradé clásico o corte a tijera y peinado final.</p>
+          <div class="flex items-center gap-1.5 text-[10px] text-[#d4af37] mt-1.5 font-medium">
+            <i class="fa-regular fa-clock"></i>
+            <span>Duración: 40 minutos</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta Servicio 2 -->
+      <div class="card-vintage rounded-2xl p-4 border border-[#d4af37]/40 flex items-center gap-4 hover:border-[#d4af37] transition shadow-lg">
+        <div class="w-12 h-12 rounded-xl bg-[#031d1d] border border-[#d4af37]/40 flex items-center justify-center text-xl text-[#fef08a] shadow-inner flex-shrink-0">
+          🪒
+        </div>
+        <div class="flex-1">
+          <h3 class="font-vintage text-sm font-bold text-white tracking-wide">Corte & Perfilado de Barba</h3>
+          <p class="text-[11px] text-[#99b8b8] mt-0.5 leading-snug">Ritual con toalla caliente, rasurado a navaja, aceites esenciales y tratamiento facial.</p>
+          <div class="flex items-center gap-1.5 text-[10px] text-[#d4af37] mt-1.5 font-medium">
+            <i class="fa-regular fa-clock"></i>
+            <span>Duración: 60 minutos</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOTOR DE TURNOS -->
+  <section id="reservas" class="max-w-md mx-auto px-5 py-6 border-t border-[#d4af37]/20">
+    <div class="text-center mb-5">
+      <span class="text-[#d4af37] text-xs font-semibold tracking-widest uppercase">✦ Agenda ✦</span>
+      <h2 class="font-vintage text-xl font-bold text-gold-metallic">Elegí Fecha y Hora</h2>
+    </div>
+
+    <!-- 1. Días -->
+    <div class="mb-5">
+      <label class="font-vintage text-xs tracking-wider text-[#d4af37] uppercase font-bold block mb-2">1. Día</label>
+      <div id="diasContainer" class="flex gap-2 overflow-x-auto no-scrollbar py-1"></div>
+    </div>
+
+    <!-- 2. Horarios con estado visual -->
+    <div class="mb-5">
+      <div class="flex justify-between items-center mb-2">
+        <label class="font-vintage text-xs tracking-wider text-[#d4af37] uppercase font-bold">2. Horarios</label>
+        <span class="text-[10px] text-[#99b8b8] flex items-center gap-2">
+          <span class="inline-block w-2 h-2 rounded-full bg-emerald-500"></span> Libre
+          <span class="inline-block w-2 h-2 rounded-full bg-zinc-600 ml-1"></span> Ocupado
+        </span>
+      </div>
+      <div id="horariosContainer" class="grid grid-cols-3 gap-2"></div>
+    </div>
+
+    <!-- 3. Datos -->
+    <div class="mb-5 card-vintage rounded-2xl p-4">
+      <label class="font-vintage text-xs tracking-wider text-[#d4af37] uppercase font-bold block mb-3">3. Tus Datos</label>
+      <div class="space-y-3">
+        <input type="text" id="nombreCliente" placeholder="Nombre y Apellido" class="w-full input-vintage rounded-xl px-4 py-3 text-sm placeholder-[#618a8a]">
+        <input type="tel" id="telefonoCliente" placeholder="WhatsApp (ej: 1123456789)" class="w-full input-vintage rounded-xl px-4 py-3 text-sm placeholder-[#618a8a]">
+      </div>
+    </div>
+
+    <!-- Resumen -->
+    <div class="bg-[#031d1d] border border-[#d4af37]/30 rounded-xl p-3 mb-3 flex justify-between items-center shadow-inner">
+      <span class="text-xs text-[#99b8b8]">Seña de reserva:</span>
+      <span class="font-vintage text-base font-bold text-gold-metallic">$3.000 ARS</span>
+    </div>
+
+    <button id="btnReservar" class="w-full btn-gold-action font-vintage font-black py-3.5 rounded-xl flex items-center justify-center gap-2 tracking-wider text-sm shadow-xl">
+      <span>RESERVAR Y PAGAR SEÑA</span>
+      <i class="fa-solid fa-angle-right"></i>
+    </button>
+  </section>
+
+  <!-- CONTACTO Y MAPA -->
+  <section id="contacto" class="max-w-md mx-auto px-5 py-8 border-t border-[#d4af37]/20">
+    <div class="card-vintage rounded-2xl p-5 border border-[#d4af37]/40 shadow-2xl">
+      <span class="text-[#d4af37] text-[10px] uppercase tracking-widest font-semibold block mb-1">DÓNDE ESTAMOS</span>
+      <h2 class="font-gotica text-3xl text-zinc-100 mb-3">Vení a <span class="text-gold-metallic">Barbería MR</span></h2>
+      
+      <div class="space-y-2 mb-4 text-xs text-zinc-300">
+        <p><i class="fa-solid fa-location-dot text-[#d4af37] mr-1.5"></i> Calle Falsa 123, Florencio Varela</p>
+        <p><i class="fa-regular fa-clock text-[#d4af37] mr-1.5"></i> Lun a Vie: 10 a 19 hs | Sáb: 10 a 18 hs</p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-2 mb-4">
+        <a href="https://instagram.com/maximiliano_ruizz" target="_blank" class="py-2.5 rounded-xl border border-[#d4af37]/40 bg-[#021515] text-[#fef08a] text-xs font-semibold flex items-center justify-center gap-1.5">
+          <i class="fa-brands fa-instagram text-[#d4af37]"></i> INSTAGRAM
+        </a>
+        <a href="https://wa.me/5491122334455" target="_blank" class="py-2.5 rounded-xl border border-[#d4af37]/40 bg-[#021515] text-[#fef08a] text-xs font-semibold flex items-center justify-center gap-1.5">
+          <i class="fa-brands fa-whatsapp text-[#d4af37]"></i> WHATSAPP
+        </a>
+      </div>
+
+      <div class="w-full h-40 rounded-xl overflow-hidden border border-[#d4af37]/30">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3278.434774640989!2d-58.2831!3d-34.794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDQ3JzM4LjQiUyA1OMKwMTYnNTkuMiJX!5e0!3m2!1ses!2sar!4v1620000000000!5m2!1ses!2sar" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" class="map-vintage"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL DE CONFIRMACIÓN -->
+  <div id="modalConfirmacion" class="hidden fixed inset-0 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 z-50">
+    <div class="card-vintage rounded-3xl p-6 w-full max-w-sm text-center border-2 border-[#d4af37]">
+      <div class="w-12 h-12 bg-[#d4af37]/10 border border-[#d4af37] text-[#d4af37] rounded-full flex items-center justify-center mx-auto mb-3 text-xl">
+        <i class="fa-solid fa-credit-card"></i>
+      </div>
+      <h3 class="font-vintage text-base font-bold text-gold-metallic mb-1">Abonar Seña</h3>
+      <p id="resumenModal" class="text-xs text-zinc-300 mb-4 font-medium"></p>
+      
+      <div class="space-y-2.5">
+        <a id="linkMercadoPago" href="#" target="_blank" class="block w-full bg-[#009ee3] hover:bg-[#0088c6] text-white font-bold py-3.5 rounded-xl text-xs uppercase tracking-wider transition flex items-center justify-center gap-2">
+          <i class="fa-solid fa-credit-card"></i>
+          <span>1. Pagar Seña de $3.000</span>
+        </a>
+        <button id="btnWhatsapp" class="w-full bg-[#25d366] hover:bg-[#20ba59] text-black font-black py-3.5 rounded-xl text-xs uppercase tracking-wider transition flex items-center justify-center gap-2">
+          <i class="fa-brands fa-whatsapp text-base"></i>
+          <span>2. Enviar Comprobante</span>
+        </button>
+        <button id="btnCerrarModal" class="text-xs text-zinc-500 hover:text-[#d4af37] pt-2">
+          Volver atrás
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
